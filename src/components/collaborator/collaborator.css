@@ -1,0 +1,42 @@
+.collaborator {
+    margin-bottom: 24px;
+    width: 280px;
+}
+
+.collaboratorHeader {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.collaborator img {
+    border-radius: 50%;
+    bottom: -50px;
+    position: relative;
+    width: 100px;
+}
+
+.info {
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100px;
+    padding-bottom: 40px;
+    padding-top: 90px;
+}
+
+.info h4 {
+    color: #6278F7;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-bottom: 8px;
+}
+
+.info h5 {
+    color: #212121;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 0;
+    padding: 0 24px;
+}

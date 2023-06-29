@@ -1,0 +1,28 @@
+:root {
+  /*Main colors:*/
+  --main_cyan: rgba(149, 255, 212, 1);
+  --main_gray: rgba(242, 242, 242, 1);
+  --main_purple: rgba(98, 120, 247, 1);
+
+  /*Team colors:*/
+  --Programming_background: #D9F7E9;
+  --Programming_highlight: #57C278 ;
+
+  --FrontEnd_background: #E8F8FF;
+  --FrontEnd_highlight: #82CFFA;
+
+  --DataScience_background: #F0F8E2;
+  --DataScience_highlight: #A6D157;
+
+  --Devops_background: #FDE7E8;
+  --Devops_highlight: #E06B69;
+
+  --UxAndDesing_background: #FAE9F5;
+  --UxAndDesing_highlight: #DB6EBF;
+
+  --Mobile_background: #FFF5D9;
+  --Mobile_highlight: #FFBA05;
+
+  --InnovationAndManagement_background: #FFEEDF;
+  --InnovationAndManagement_highlight: #FF8A29;
+}

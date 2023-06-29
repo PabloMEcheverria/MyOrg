@@ -1,0 +1,8 @@
+.header {
+    background-color: var(--main_purple);
+    text-align: center;
+}
+
+.header img {
+    max-width: 100%;
+}
