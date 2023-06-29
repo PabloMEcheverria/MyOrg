@@ -19,13 +19,48 @@ function App() {
   ]
 
   const [formDisplay, setFormDisplay] = useState(false);
-  const [collaborators, setCollaborators] = useState([]);
+  const [collaborators, setCollaborators] = useState([
+    {
+      name:"Harland Lohora", 
+      job:"Instructor", 
+      avatar:"https://github.com/harlandlohora.png", 
+      team:"Front End"
+    }, 
+    {
+      name:"Genesys Rondón", 
+      job:"Desarrolladora de software e instructora", 
+      avatar:"https://github.com/genesysaluralatam.png", 
+      team:"Programación"
+    }, 
+    {
+      name:"Jeanmarie Quijada", 
+      job:"Instructora en Alura latam", 
+      avatar:"https://github.com/JeanmarieAluraLatam.png", 
+      team:"UX y Diseño"
+    }, 
+    {
+      name:"Christian Velasco", 
+      job:"Head de Alura e instructor", 
+      avatar:"https://github.com/christianpva.png", 
+      team:"Programación"
+    }, 
+    {
+      name:"Jose Gonzalez", 
+      job:"Dev FullStack", 
+      avatar:"https://github.com/JoseDarioGonzalezCha.png", 
+      team:"Innovación y Gestión"
+    }
+  ]);
   const addEvent = () => {
     setFormDisplay(!formDisplay);
   }
 
   const registerCollaborator = (newCollaborator) => {
     setCollaborators([...collaborators, newCollaborator]);
+  }
+
+  const deleteCollaborator = () => {
+    console.log("Delete this collaborator.");
   }
 
   return (
@@ -38,7 +73,8 @@ function App() {
         <TeamComponent 
           data={team} 
           key={team.title} 
-          collaborators={collaborators.filter( collaborator => collaborator.team === team.title)}>
+          collaborators={collaborators.filter( collaborator => collaborator.team === team.title)}
+          deleteCollaborator={deleteCollaborator}>
         </TeamComponent>)
        }
        <Footer></Footer>

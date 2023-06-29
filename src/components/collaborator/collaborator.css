@@ -1,6 +1,15 @@
 .collaborator {
     margin-bottom: 24px;
     width: 280px;
+    position: relative;
+}
+
+.deleteButton {
+    height: 32px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 32px;
 }
 
 .collaboratorHeader {
