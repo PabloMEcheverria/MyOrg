@@ -63,6 +63,10 @@ function App() {
     console.log("Delete this collaborator.");
   }
 
+  const updateColorTitle = (color, title) => {
+    console.log("Actualizar color: ", color, title);
+  }
+
   return (
     <div className="App">
        <HeaderComponent />
@@ -74,7 +78,8 @@ function App() {
           data={team} 
           key={team.title} 
           collaborators={collaborators.filter( collaborator => collaborator.team === team.title)}
-          deleteCollaborator={deleteCollaborator}>
+          deleteCollaborator={deleteCollaborator}
+          updateColorTitle={updateColorTitle}>
         </TeamComponent>)
        }
        <Footer></Footer>

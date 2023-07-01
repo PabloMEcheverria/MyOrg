@@ -1,11 +1,18 @@
 .team {
     box-sizing: border-box;
     padding: 32px;
+    position: relative;
     text-align: center;
     width: 100%;
 }
 
-.team h2 {
+.inputColor {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+
+.team h3 {
     color: rgba(33, 33, 33, 1);
     border-bottom-width: 4px;
     border-bottom-style: solid;
