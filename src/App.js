@@ -7,17 +7,6 @@ import TeamComponent from './components/teamComponent';
 import Footer from './components/footer';
 
 function App() {
-  
-  let teamsArray = [
-    {title: "Programación", primaryColor: "#57C278", secondaryColor: "#D9F7E9"}, 
-    {title: "Front End", primaryColor: "#82CFFA", secondaryColor: "#E8F8FF"}, 
-    {title: "Data Science", primaryColor: "#A6D157", secondaryColor: "#F0F8E2"}, 
-    {title: "Devops", primaryColor: "#E06B69", secondaryColor: "#FDE7E8"}, 
-    {title: "UX y Diseño", primaryColor: "#DB6EBF", secondaryColor: "#FAE9F5"}, 
-    {title: "Móvil", primaryColor: "#FFBA05", secondaryColor: "#FFF5D9"}, 
-    {title: "Innovación y Gestión", primaryColor: "#FF8A29", secondaryColor: "#FFEEDF"}
-  ]
-
   const [formDisplay, setFormDisplay] = useState(false);
   const [collaborators, setCollaborators] = useState([
     {
@@ -51,6 +40,15 @@ function App() {
       team:"Innovación y Gestión"
     }
   ]);
+  const [teams, setTeams] = useState([
+    {title: "Programación", primaryColor: "#57C278", secondaryColor: "#D9F7E9"}, 
+    {title: "Front End", primaryColor: "#82CFFA", secondaryColor: "#E8F8FF"}, 
+    {title: "Data Science", primaryColor: "#A6D157", secondaryColor: "#F0F8E2"}, 
+    {title: "Devops", primaryColor: "#E06B69", secondaryColor: "#FDE7E8"}, 
+    {title: "UX y Diseño", primaryColor: "#DB6EBF", secondaryColor: "#FAE9F5"}, 
+    {title: "Móvil", primaryColor: "#FFBA05", secondaryColor: "#FFF5D9"}, 
+    {title: "Innovación y Gestión", primaryColor: "#FF8A29", secondaryColor: "#FFEEDF"}
+  ]);
   const addEvent = () => {
     setFormDisplay(!formDisplay);
   }
@@ -65,15 +63,22 @@ function App() {
 
   const updateColorTitle = (color, title) => {
     console.log("Actualizar color: ", color, title);
+    const updatedTeams = teams.map( team => {
+      if (team.title === title) {
+        team.primaryColor = color;
+      }
+      return team
+    });
+    setTeams(updatedTeams);
   }
 
   return (
     <div className="App">
        <HeaderComponent />
-       {formDisplay && <FormComponent data={teamsArray.map(team => team.title)} registerCollaborator={registerCollaborator}/>}
+       {formDisplay && <FormComponent data={teams.map(team => team.title)} registerCollaborator={registerCollaborator}/>}
        <MyOrgComponent addEvent={addEvent} />
        {
-        teamsArray.map( team => 
+        teams.map( team => 
         <TeamComponent 
           data={team} 
           key={team.title} 
