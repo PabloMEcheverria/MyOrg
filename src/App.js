@@ -63,12 +63,12 @@ function App() {
     setCollaborators([...collaborators, newCollaborator]);
   }
 
-  const deleteCollaborator = () => {
-    console.log("Delete this collaborator.");
+  const deleteCollaborator = (id) => {
+    const updatedCollaborators = collaborators.filter( collaborator => collaborator.id !== id);
+    setCollaborators(updatedCollaborators);
   }
 
   const updateColorTitle = (color, id) => {
-    console.log("Actualizar color: ", color, id);
     const updatedTeams = teams.map( team => {
       if (team.id === id) {
         team.primaryColor = color;
@@ -78,10 +78,21 @@ function App() {
     setTeams(updatedTeams);
   }
 
+  const registerTeam = (newTeam) => {
+    newTeam.id = uuid();
+    setTeams([...teams, newTeam]);
+  }
+
   return (
     <div className="App">
        <HeaderComponent />
-       {formDisplay && <FormComponent data={teams.map(team => team.title)} registerCollaborator={registerCollaborator}/>}
+       {
+          formDisplay && <FormComponent 
+            data={teams.map(team => team.title)} 
+            registerCollaborator={registerCollaborator} 
+            registerTeam={registerTeam}
+          />
+        }
        <MyOrgComponent addEvent={addEvent} />
        {
         teams.map( team => 

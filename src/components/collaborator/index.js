@@ -2,10 +2,10 @@ import "./collaborator.css"
 import { AiFillCloseCircle } from "react-icons/ai"
 
 export default function Collaborator (props) {
-    const {name, job, avatar/*, team*/} = props.collaborator;
+    const {name, id, job, avatar/*, team*/} = props.collaborator;
     const { primaryColor, deleteCollaborator } = props;
     return  <div className="collaborator">
-                <AiFillCloseCircle onClick={deleteCollaborator} className="deleteButton"></AiFillCloseCircle>
+                <AiFillCloseCircle onClick={() => deleteCollaborator(id)} className="deleteButton"></AiFillCloseCircle>
                 <div className="collaboratorHeader" style={{backgroundColor: primaryColor}}>
                     <img src={avatar} alt={name}></img>
                 </div>
