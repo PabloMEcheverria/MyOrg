@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./formComponent.css"
-import FormInputComponent from "../formInputComponent"
+import Input from "../Input"
 import FormSelectComponent from "../formSelectComponent"
 import Button from "../button"
 
@@ -32,31 +32,33 @@ const FormComponent = (props) => {
     const [job, setJob] = useState("");
     const [avatar, setAvatar] = useState("");
     const [team, setTeam] = useState("");
+    
     const [title, setTitle] = useState("");
     const [color, setColor] = useState("");
 
     const setNameInput = event => setName(event.target.value);
     const setJobInput = event => setJob(event.target.value);
     const setAvatarInput = event => setAvatar(event.target.value);
+    
     const setTitleInput = event => setTitle(event.target.value);
     const setColorInput = event => setColor(event.target.value);
 
     return  <section className ="collaboratorForm">
                 <form onSubmit={submitCollaboratorForm}>
                     <h2>Rellena el formulario para crear el colaborador.</h2>
-                    <FormInputComponent 
+                    <Input 
                         fieldTopic="Nombre" 
                         required 
                         value={name} 
                         setInput={setNameInput}
                     />
-                    <FormInputComponent 
+                    <Input 
                         fieldTopic="Puesto" 
                         required 
                         value={job}
                         setInput={setJobInput}
                     />
-                    <FormInputComponent 
+                    <Input 
                         fieldTopic="Foto" 
                         required 
                         value={avatar}
@@ -71,17 +73,18 @@ const FormComponent = (props) => {
                 </form>
                 <form onSubmit={submitTeamForm}>
                     <h2>Rellena el formulario para crear el equipo.</h2>
-                    <FormInputComponent 
+                    <Input 
                         fieldTopic="Nombre del equipo" 
                         required 
                         value={title} 
                         setInput={setTitleInput}
                     />
-                    <FormInputComponent 
+                    <Input 
                         fieldTopic="Color" 
                         required 
                         value={color}
                         setInput={setColorInput}
+                        type="color"
                     />
                     <Button>
                         Registrar equipo
