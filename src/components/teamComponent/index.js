@@ -2,7 +2,8 @@ import "./teamComponent.css"
 import "../../App.css"
 import Collaborator from "../collaborator";
 import hexToRgba from 'hex-to-rgba';
-import rgbToHex from 'rgba-to-hex-colors';
+//import rgbToHex from 'rgba-to-hex-colors';
+//const { rgbToHex } = require('rgba-to-hex-colors');
 
 export default function TeamComponent (props) {
     const {title, id, primaryColor/*, secondaryColor*/} = props.data;
@@ -15,7 +16,7 @@ export default function TeamComponent (props) {
                     <section className="team" style={background__color}>
                         <input 
                             type="color" 
-                            value={rgbToHex(hexToRgba(primaryColor, 0.6))} 
+                            value={hexToRgba(primaryColor, 0.6)} 
                             onChange={(event) => {
                                 updateColorTitle(event.target.value, id);
                             }} 
