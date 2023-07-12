@@ -9,7 +9,7 @@ export default function TeamComponent (props) {
     const background__color = {backgroundColor: hexToRgba(primaryColor, 0.6)};
     const border__Color = {borderColor: primaryColor};
 
-    const { collaborators, deleteCollaborator, updateColorTitle } = props;
+    const { collaborators, deleteCollaborator, updateColorTitle, setLike } = props;
     return  <>
                 {   collaborators.length > 0 &&
                     <section className="team" style={background__color}>
@@ -23,7 +23,7 @@ export default function TeamComponent (props) {
                         ></input>
                         <h3 style={border__Color}>{title}</h3>
                         <div className="collaborators">
-                            {collaborators.map( (collaborator, index) => <Collaborator collaborator={collaborator} key={index} primaryColor={primaryColor} deleteCollaborator={deleteCollaborator}></Collaborator>)}
+                            {collaborators.map( (collaborator, index) => <Collaborator collaborator={collaborator} key={index} primaryColor={primaryColor} deleteCollaborator={deleteCollaborator} setLike={setLike}></Collaborator>)}
                         </div>
                     </section>
                 }

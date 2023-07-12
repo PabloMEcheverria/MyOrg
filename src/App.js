@@ -15,35 +15,40 @@ function App() {
       name: "Harland Lohora", 
       job: "Instructor", 
       avatar: "https://github.com/harlandlohora.png", 
-      team: "Front End"
+      team: "Front End", 
+      like: true
     }, 
     {
       id: uuid(), 
       name: "Genesys Rondón", 
       job: "Desarrolladora de software e instructora", 
       avatar: "https://github.com/genesysaluralatam.png", 
-      team: "Programación"
+      team: "Programación", 
+      like: false
     }, 
     {
       id: uuid(), 
       name: "Jeanmarie Quijada", 
       job: "Instructora en Alura latam", 
       avatar: "https://github.com/JeanmarieAluraLatam.png", 
-      team: "UX y Diseño"
+      team: "UX y Diseño", 
+      like: false
     }, 
     {
       id: uuid(), 
       name: "Christian Velasco", 
       job: "Head de Alura e instructor", 
       avatar: "https://github.com/christianpva.png", 
-      team: "Programación"
+      team: "Programación", 
+      like: false
     }, 
     {
       id: uuid(), 
       name: "Jose Gonzalez", 
       job: "Dev FullStack", 
       avatar: "https://github.com/JoseDarioGonzalezCha.png", 
-      team: "Innovación y Gestión"
+      team: "Innovación y Gestión", 
+      like: false
     }
   ]);
   const [teams, setTeams] = useState([
@@ -83,6 +88,16 @@ function App() {
     setTeams([...teams, newTeam]);
   }
 
+  const setLike = id => {
+    const collaboratorUpdated = collaborators.map( collaborator => {
+      if(collaborator.id === id) {
+        collaborator.like = !collaborator.like;
+      }
+      return collaborator
+    })
+    setCollaborators(collaboratorUpdated);
+  }
+
   return (
     <div className="App">
        <HeaderComponent />
@@ -101,7 +116,8 @@ function App() {
           key={team.title} 
           collaborators={collaborators.filter( collaborator => collaborator.team === team.title)}
           deleteCollaborator={deleteCollaborator}
-          updateColorTitle={updateColorTitle}>
+          updateColorTitle={updateColorTitle} 
+          setLike={setLike}>
         </TeamComponent>)
        }
        <Footer></Footer>
