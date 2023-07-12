@@ -2,7 +2,7 @@ import "./teamComponent.css"
 import "../../App.css"
 import Collaborator from "../collaborator";
 import hexToRgba from 'hex-to-rgba';
-import { rgbToHex } from "rgba-to-hex-colors";
+import rgbToHex from 'rgba-to-hex-colors';
 
 export default function TeamComponent (props) {
     const {title, id, primaryColor/*, secondaryColor*/} = props.data;
