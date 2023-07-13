@@ -17,7 +17,7 @@ export default function TeamComponent (props) {
                     <section className="team" style={background__color}>
                         <input 
                             type="color" 
-                            value={rgbHex(hexToRgba(primaryColor, 0.6))} 
+                            value={primaryColor} 
                             onChange={(event) => {
                                 updateColorTitle(event.target.value, id);
                             }} 
